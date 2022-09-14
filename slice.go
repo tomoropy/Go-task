@@ -15,19 +15,10 @@ func main() {
 	for _, v := range init {
 		switch v.(type) {
 		case int:
-			fillZero(v.(int))
+			fmt.Printf("%02d\n", v.(int))
 		case string:
 			arg, _ := strconv.Atoi(v.(string))
-			fillZero(arg)
-
+			fmt.Printf("%02d\n", arg)
 		}
-	}
-}
-
-func fillZero(num int) {
-	if num > 10 {
-		fmt.Println(num)
-	}else {
-		fmt.Printf("%02d\n", num)
 	}
 }
