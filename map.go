@@ -10,11 +10,11 @@ import (
 	"fmt"
 )
 
-func main()  {
-	m := map[int]string {
-		1 : "01",
-		2 : "02",
-		3 : "03",
+func main() {
+	m := map[int]string{
+		1: "01",
+		2: "02",
+		3: "03",
 	}
 
 	key, err := findKeyByValue(m, "01")
@@ -29,7 +29,7 @@ func main()  {
 
 }
 
-func findKeyByValue(m map[int]string, v string)(int, error) {
+func findKeyByValue(m map[int]string, v string) (int, error) {
 	for key, value := range m {
 		if value == v {
 			return key, nil
