@@ -9,24 +9,23 @@ package main
 
 import "fmt"
 
-
 type MyIntSlice []int
 
-func main()  {
+func main() {
 	m := MyIntSlice{1, 2, 2, 3, 3, 3, 4, 5}
 
 	fmt.Println(m.Unique())
 }
 
-func (m MyIntSlice) Unique() (unique []int) {
+func (m MyIntSlice) Unique() []int {
 	validMap := make(map[int]bool)
-	unique = []int{}
+	unique := []int{}
 
-	for _, v := range m{
-		if !validMap[v] {
+	for _, v := range m {
+		if _, ok := validMap[v]; !ok {
 			validMap[v] = true
 			unique = append(unique, v)
 		}
 	}
-	return
+	return unique
 }
