@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	init := []interface{}{ 1, "2", 10, "11"}
+	init := []interface{}{1, "2", 10, "11"}
 
 	for _, v := range init {
 		switch v.(type) {
