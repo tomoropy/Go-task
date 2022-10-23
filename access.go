@@ -18,13 +18,7 @@ type aUser struct {
 }
 
 func (user *aUser) CanAccess() bool {
-	// if文の中で変数定義をすればよい...？？
-	// ちょうど偶数がtrueだったので以下の条件式にしてみました
-	if i := user.Role; i%2 == 0 {
-		return true
-	}
-
-	return false
+	return user.Role == MENTOR || user.Role == ADMIN
 }
 
 func main() {
