@@ -1,26 +1,27 @@
 package main
 
-import "fmt"
-
+import (
+	"fmt"
+)
 type User struct {
 	Name string
 }
 
-var user = &User{"tomo"}
-
 func main() {
 	// getUser()は *Userを返す。
-	if user := getUser(); user == nil {
-		fmt.Println("userを定義してください")
-	}else{
-		fmt.Println(getName(user))
-	}
+	user := getUser()
+	fmt.Println(getName(user))
 }
 
 func getName(user *User) string {
+	// Nameがあるか確認
+	if user.Name == "" {
+		return "userの名前がありません"
+	}
 	return user.Name
 }
 
 func getUser() *User {
+	var user = &User{} //userのNameがない状態で初期化
 	return user
 }

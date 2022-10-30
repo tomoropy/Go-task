@@ -7,7 +7,7 @@ import (
 type MyInt int
 
 func (m MyInt)String() string {
-	return fmt.Sprintf("%v","hoge")
+	return "hoge" 
 }
 
 func main() {
