@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 )
+
 type User struct {
 	Name string
 }
@@ -14,14 +15,8 @@ func main() {
 }
 
 func getName(user *User) string {
-	// Nameがあるか確認
-	if user.Name == "" {
-		return "userの名前がありません"
+	if user == nil {
+		return ""
 	}
 	return user.Name
-}
-
-func getUser() *User {
-	var user = &User{} //userのNameがない状態で初期化
-	return user
 }
